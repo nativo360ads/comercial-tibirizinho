@@ -1,0 +1,20 @@
+COMERCIAL TIBIRIZINHO (CGT) - PAGINA DE LINKS COM VIDEO DE FUNDO
+Criada em 19/11/2026 no modelo Nativo (_PADRAO_NATIVO/modelo_pagina_links), com a identidade da CGT (azul royal, vermelho, branco).
+
+Arquivos (sobem todos juntos para a hospedagem):
+- index.html  -> pagina
+- fundo.mp4   -> video de fundo, 18s em loop, 540x960, H.264, 3,2 MB. Feito com as 6 fotos reais da loja
+                 (fachada, corredor, hortifruti, acougue, freezer, letreiro), com zoom lento e transicoes. Sem precos: nao vence.
+- fundo.jpg   -> capa do video (aparece enquanto o video carrega)
+- logo.png    -> logo CGT 360x360
+
+Para editar: no final do index.html, bloco CONFIGURACAO:
+- whatsapp: 5598991746282 (delivery, tirado da bio)
+- instagram: comercial_tibirizinho (ok 19/11)
+- maps: https://maps.app.goo.gl/P6SjZ9KdGV9zFMx18 (ok 19/11)
+- avaliacao: PENDENTE (link "pedir avaliacoes" do Perfil da Empresa no Google). Enquanto vazio, fica apagado
+- encarte: vazio = botao "Ofertas da semana" escondido. Quando o Rodrigo aprovar o encarte, colocar "encarte.jpg"
+  na pasta e preencher encarte + encarteValidade. Trocar toda semana (ou esvaziar quando vencer).
+
+Extras: selo "Aberto agora/Fechado agora" automatico (7h30-20h, horario de Sao Luis).
+Preview local: launch.json "tibirizinho" (porta 5186).

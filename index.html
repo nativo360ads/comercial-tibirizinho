@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Comercial Tibirizinho | Mercado, Açougue e Delivery no Tibiri</title>
+<meta name="description" content="Comercial Tibirizinho (CGT): mercado, açougue e hortifruti no Tibiri, São Luís. Todos os dias, 7h30 às 20h. Peça delivery pelo WhatsApp.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#071A5C">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Comercial Tibirizinho · Onde o melhor custa menos">
+<meta property="og:description" content="Mercado, açougue e hortifruti no Tibiri. Peça delivery pelo WhatsApp.">
+<meta property="og:image" content="fundo.jpg">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,700;0,800;1,800;1,900&display=swap">
+<style>
+/* Página de links (modelo Nativo, estilo Toda Fina) — identidade CGT: azul royal, vermelho e branco, vídeo da loja ao fundo. */
+:root{
+  --bg:#050C2B; --navy:#071A5C; --royal:#1235B5; --red:#E01E25; --red-hi:#FF4A4F;
+  --text:#FFFFFF; --muted:#B9C3E6; --line:rgba(255,255,255,.16);
+  --beam:#FF4A4F;          /* cor dos ícones e destaques */
+  --gold2:rgba(255,74,79,.75); /* borda dos botões */
+  --body:"Fira Sans",Arial,Helvetica,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg);scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased}
+@media(min-width:521px){body{background:#030820}}
+.site{width:100%;max-width:520px;margin:0 auto;min-height:100vh;min-height:100svh;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;background:var(--navy)}
+@media(min-width:521px){.site{box-shadow:0 0 80px rgba(0,0,0,.8)}}
+
+/* vídeo de fundo + camadas */
+.bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.bg-shade{position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+    linear-gradient(180deg,rgba(7,26,92,.62) 0%,rgba(5,12,43,.78) 42%,rgba(5,12,43,.94) 100%)}
+/* faixa diagonal vermelho/azul, assinatura das artes da CGT */
+.site::before{content:"";position:absolute;z-index:0;top:-120px;right:-140px;width:360px;height:360px;transform:rotate(18deg);pointer-events:none;
+  background:linear-gradient(90deg,transparent 0 30%,rgba(224,30,37,.55) 30% 62%,rgba(18,53,181,.0) 62%);filter:blur(1px);opacity:.55}
+
+.wrap{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;justify-content:center;
+  padding-block:40px 40px;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+
+/* topo */
+.hero{text-align:center;padding-bottom:22px}
+.logo-stage{width:132px;height:132px;margin:0 auto 18px;border-radius:50%;background:#fff;padding:5px;
+  box-shadow:0 0 0 4px rgba(255,255,255,.12),0 12px 40px rgba(224,30,37,.35),0 4px 14px rgba(0,0,0,.5);
+  animation:logoEnter 1s cubic-bezier(.2,.8,.2,1) both}
+.logo{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover}
+@keyframes logoEnter{0%{opacity:0;transform:scale(.7) rotate(-8deg)}70%{opacity:1;transform:scale(1.05)}100%{transform:scale(1)}}
+.brand{font-weight:800;font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.hero h1{font-weight:900;font-style:italic;font-size:clamp(1.85rem,8.4vw,2.35rem);line-height:1;text-transform:uppercase;letter-spacing:-.005em;text-wrap:balance}
+.hero h1 em{display:inline-block;margin-top:6px;padding:4px 12px 5px;background:var(--red);border-radius:4px;transform:skewX(-6deg);font-style:italic;
+  box-shadow:0 6px 18px rgba(224,30,37,.35)}
+.tags{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:16px}
+.tag{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:6px 10px;border-radius:999px;
+  background:rgba(255,255,255,.08);border:1px solid var(--line);color:#E6EBFA}
+
+/* status aberto/fechado */
+.status{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:.82rem;color:var(--muted)}
+.status b{color:#fff;font-weight:700}
+.dot{width:9px;height:9px;border-radius:50%;background:#8a93ad;flex:none}
+.status.open .dot{background:#2EE07A;box-shadow:0 0 0 0 rgba(46,224,122,.6);animation:pulse 1.8s infinite}
+.status.closed .dot{background:var(--red-hi)}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(46,224,122,.55)}70%{box-shadow:0 0 0 9px rgba(46,224,122,0)}100%{box-shadow:0 0 0 0 rgba(46,224,122,0)}}
+
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,74,79,.7),transparent);margin:2px 0 22px}
+
+/* botões (padrão Nativo) */
+.links{display:grid;gap:13px}
+.link{width:100%;min-height:64px;border:1px solid var(--gold2);border-radius:12px;
+  background:linear-gradient(180deg,rgba(9,22,74,.88),rgba(5,13,46,.92));backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  display:flex;align-items:center;padding:12px 15px;color:#fff;text-decoration:none;box-shadow:0 8px 28px rgba(0,0,0,.28);
+  transition:border-color .2s ease,transform .15s ease,background .2s ease;cursor:pointer;font:inherit;text-align:left;
+  opacity:0;animation:rise .6s cubic-bezier(.2,.8,.2,1) forwards}
+.links .link:nth-child(1){animation-delay:.25s}.links .link:nth-child(2){animation-delay:.33s}.links .link:nth-child(3){animation-delay:.41s}
+.links .link:nth-child(4){animation-delay:.49s}.links .link:nth-child(5){animation-delay:.57s}.links .link:nth-child(6){animation-delay:.65s}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.link:hover{border-color:#fff}
+.link:active{transform:scale(.985)}
+.link:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.icon{width:38px;min-width:38px;height:38px;display:grid;place-items:center;color:var(--beam);margin-right:12px}
+.icon svg{width:29px;height:29px;display:block}
+.label{flex:1;min-width:0;font-size:13.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;line-height:1.3}
+.label small{display:block;font-size:11.5px;font-weight:400;letter-spacing:0;text-transform:none;color:var(--muted);margin-top:2px}
+.chev{width:18px;height:18px;color:rgba(255,255,255,.45);flex:none}
+
+/* botão principal: delivery */
+.link.main{border:0;min-height:84px;background:linear-gradient(100deg,#E01E25 0%,#C3141B 55%,#9E0E14 100%);
+  box-shadow:0 12px 34px rgba(224,30,37,.42),inset 0 1px 0 rgba(255,255,255,.25);position:relative;overflow:hidden}
+.link.main::after{content:"";position:absolute;top:0;bottom:0;width:60px;left:-80px;transform:skewX(-20deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);animation:shine 3.6s ease-in-out 1.4s infinite}
+@keyframes shine{0%{left:-80px}35%,100%{left:120%}}
+.link.main .icon{color:#fff;width:46px;min-width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.16)}
+.link.main .icon svg{width:26px;height:26px}
+.link.main .label{font-size:15px;font-weight:800}
+.link.main .label small{color:#FFE3E4;font-size:12px}
+.link.main .label em{display:block;font-style:normal;font-size:10.5px;font-weight:800;letter-spacing:.1em;color:#fff;margin-top:5px;opacity:.95}
+.link.main .chev{color:#fff}
+
+/* bloco de informações */
+.info{margin-top:22px;border:1px dashed var(--line);border-radius:12px;padding:14px 16px;display:grid;gap:10px;
+  background:rgba(5,12,43,.55);font-size:.88rem;color:var(--muted)}
+.info div{display:flex;align-items:flex-start;gap:11px}
+.info svg{width:19px;height:19px;color:var(--beam);flex:none;margin-top:1px}
+.info b{color:#fff;font-weight:600}
+
+.footer{text-align:center;color:#7A85AB;font-size:.7rem;font-weight:700;line-height:1.8;letter-spacing:.16em;text-transform:uppercase;padding-top:26px}
+.footer a{color:inherit}
+
+
+/* encarte em tela cheia */
+.sheet{position:fixed;inset:0;z-index:80;background:rgba(3,8,32,.92);display:none;align-items:center;justify-content:center;padding:16px}
+.sheet.on{display:flex}
+.sheet img{max-width:100%;max-height:100%;border-radius:10px;box-shadow:0 20px 60px #000}
+.sheet button{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:14px;width:44px;height:44px;border-radius:50%;border:0;
+  background:#fff;color:var(--navy);font:800 22px/1 var(--body);cursor:pointer}
+
+[data-pendente]{pointer-events:none}
+.link[data-pendente]>*{opacity:.45}
+[hidden]{display:none!important}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.link{opacity:1}}
+</style>
+</head>
+<body>
+<main class="site">
+<!-- Vídeo de fundo: tour da loja (fundo.mp4) com capa fundo.jpg -->
+<video class="bg-video" autoplay muted loop playsinline preload="auto" poster="fundo.jpg" aria-hidden="true">
+  <source src="fundo.mp4" type="video/mp4">
+</video>
+<div class="bg-shade"></div>
+
+<div class="wrap">
+<header class="hero">
+  <div class="logo-stage"><img class="logo" src="logo.png" width="360" height="360" alt="CGT Comercial Tibirizinho"></div>
+  <p class="brand">Comercial Tibirizinho</p>
+  <h1>Onde o melhor<br><em>custa menos</em></h1>
+  <div class="tags"><span class="tag">Mercearia</span><span class="tag">Açougue</span><span class="tag">Hortifruti</span><span class="tag">Caixa 24h</span></div>
+  <div class="status" id="status"><span class="dot"></span><span id="status-txt">Todos os dias, 7h30 às 20h</span></div>
+</header>
+
+<div class="divider"></div>
+
+<nav class="links" aria-label="Links do Comercial Tibirizinho">
+  <a class="link main" data-wa="Oi! Vim pelo site do Tibirizinho e quero fazer um pedido de delivery. Minha lista: " target="_blank" rel="noopener">
+    <span class="icon"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg></span>
+    <span class="label">Peça sem sair de casa
+      <small>Mande sua lista no WhatsApp e receba no Tibiri</small>
+      <em>FAZER PEDIDO DE DELIVERY →</em></span>
+  </a>
+
+  <button class="link" type="button" data-encarte hidden>
+    <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9-9-9Z"/><circle cx="8" cy="8" r="1.6" fill="currentColor"/></svg></span>
+    <span class="label">Ofertas da semana<small id="encarte-validade">Confira o encarte com os preços da semana</small></span>
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+  </button>
+
+  <a class="link" data-wa="Oi! Vim pelo site. Quero saber os cortes e preços do açougue hoje." target="_blank" rel="noopener">
+    <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M15.5 3.5c3 1.2 5 4.3 4.6 7.7-.5 4.2-4.5 6.9-8.6 8.3-2.6.9-5.6.9-7-1-1.5-2 .2-4.4 1.1-6.6.9-2.3.6-5.1 2.6-7 1.9-1.8 4.8-2.3 7.3-1.4Z"/><circle cx="14.5" cy="9.5" r="2.3"/></svg></span>
+    <span class="label">Açougue do Tibirizinho<small>Pergunte os cortes e o preço do quilo hoje</small></span>
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+  </a>
+
+  <a class="link" data-ig target="_blank" rel="noopener">
+    <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span>
+    <span class="label">Siga no Instagram<small>Ofertas, novidades e bastidores da loja</small></span>
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+  </a>
+
+  <a class="link" data-map target="_blank" rel="noopener">
+    <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+    <span class="label">Como chegar<small>R. do Matadouro, 51 · Tibiri, no Google Maps</small></span>
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+  </a>
+
+  <a class="link" data-review target="_blank" rel="noopener">
+    <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z"/></svg></span>
+    <span class="label">Avalie no Google<small>Leva menos de 1 minuto. Obrigado!</small></span>
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+  </a>
+</nav>
+
+<section class="info" aria-label="Informações da loja">
+  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><b>Todos os dias</b>, das 7h30 às 20h</span></div>
+  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><b>R. do Matadouro, 51</b> · Tibiri, São Luís - MA</span></div>
+  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 15h3"/></svg><span><b>Caixa eletrônico 24h</b> na loja</span></div>
+</section>
+
+<footer class="footer">Comercial Tibirizinho · São Luís - MA<br>Site por <a href="https://www.instagram.com/nativo360ads/" target="_blank" rel="noopener">Nativo 360°</a></footer>
+</div>
+</main>
+
+
+<div class="sheet" id="sheet" role="dialog" aria-label="Encarte de ofertas">
+  <button type="button" aria-label="Fechar">×</button>
+  <img alt="Encarte Ofertas da Semana do Comercial Tibirizinho">
+</div>
+
+<script>
+/* ===== CONFIGURAÇÃO ===== */
+const CGT = {
+  whatsapp: "5598991746282",  // delivery (bio do Instagram)
+  instagram: "comercial_tibirizinho",
+  maps: "https://maps.app.goo.gl/P6SjZ9KdGV9zFMx18",
+  avaliacao: "",              // link "pedir avaliação" do Perfil da Empresa no Google — PENDENTE
+  encarte: "",                // ex.: "encarte.jpg" (só depois da aprovação do Rodrigo). Vazio = botão some
+  encarteValidade: ""         // ex.: "Válidas até domingo, 29/11, ou enquanto durarem os estoques"
+};
+/* ======================== */
+document.querySelectorAll("[data-wa]").forEach(a => {
+  if (CGT.whatsapp) a.href = "https://wa.me/" + CGT.whatsapp + "?text=" + encodeURIComponent(a.dataset.wa);
+  else a.setAttribute("data-pendente", "");
+});
+const setLink = (sel, url) => document.querySelectorAll(sel).forEach(a => url ? a.href = url : a.setAttribute("data-pendente", ""));
+setLink("[data-ig]", CGT.instagram && "https://www.instagram.com/" + CGT.instagram + "/");
+setLink("[data-map]", CGT.maps);
+setLink("[data-review]", CGT.avaliacao);
+
+/* encarte em tela cheia */
+const btnEnc = document.querySelector("[data-encarte]"), sheet = document.getElementById("sheet");
+if (CGT.encarte) {
+  btnEnc.hidden = false;
+  if (CGT.encarteValidade) document.getElementById("encarte-validade").textContent = CGT.encarteValidade;
+  btnEnc.onclick = () => { sheet.querySelector("img").src = CGT.encarte; sheet.classList.add("on"); };
+  sheet.onclick = e => { if (e.target !== sheet.querySelector("img")) sheet.classList.remove("on"); };
+  addEventListener("keydown", e => e.key === "Escape" && sheet.classList.remove("on"));
+}
+
+/* aberto agora? (horário de São Luís, 7h30–20h todos os dias) */
+(() => {
+  const el = document.getElementById("status"), txt = document.getElementById("status-txt");
+  const parts = new Intl.DateTimeFormat("pt-BR", { timeZone: "America/Fortaleza", hour: "2-digit", minute: "2-digit", hour12: false }).formatToParts(new Date());
+  const m = (+parts.find(p => p.type === "hour").value % 24) * 60 + +parts.find(p => p.type === "minute").value;
+  const open = m >= 450 && m < 1200;
+  el.classList.add(open ? "open" : "closed");
+  txt.innerHTML = open ? "<b>Aberto agora</b> · fecha às 20h" : "<b>Fechado agora</b> · abre às 7h30";
+})();
+</script>
+</body>
+</html>
